@@ -1,0 +1,195 @@
+/* Universal Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #282c34, #1a1a2e, #0f3460); /* A unified darker background */
+  color: #e0e0e0; /* Default text color */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  background: rgba(0, 0, 0, 0.3); /* Slightly transparent background for the main content area */
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #00bcd4; /* Consistent title color */
+  text-shadow: 0 0 15px rgba(0, 188, 212, 0.6); /* Glowing effect */
+}
+
+/* Gallery-specific Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px; /* Max width for the grid itself */
+  margin-bottom: 50px;
+}
+
+.card {
+  text-decoration: none;
+  color: #e0e0e0; /* Card text color */
+  background: rgba(45, 45, 45, 0.7); /* Slightly lighter background for cards */
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border: 1px solid rgba(0,188,212,0.3); /* Subtle border */
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background: rgba(60, 60, 60, 0.8); /* Slightly brighter on hover */
+}
+
+.card h2 {
+  font-size: 1.3em;
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: #00bcd4; /* Card title color */
+}
+
+.card-image-container {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Detail Page specific content wrapper */
+.movie-detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 700px; /* Max width for detail content */
+}
+
+.movie-detail-img {
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  border: 3px solid #00bcd4;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-detail-img:hover {
+  transform: scale(1.03);
+}
+
+.description {
+  font-size: 1.25em;
+  line-height: 1.8;
+  color: #c9c9c9;
+  text-align: center;
+  max-width: 700px;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Back to Gallery Link - Unified Style */
+.back-to-gallery-link { /* Using the new class name */
+  color: #8affff;
+  text-decoration: none;
+  margin-top: 40px;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid #00bcd4;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.back-to-gallery-link:hover {
+  background-color: #00bcd4;
+  color: #1a1a2e;
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Basic loading message style */
+.loading-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #00bcd4; /* Consistent color for loading message */
+    margin-top: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  .card-image-container {
+    height: 200px;
+  }
+
+  .movie-detail-img {
+    width: 250px;
+    height: 375px;
+  }
+
+  .description {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  .back-to-gallery-link {
+    font-size: 1em;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
