@@ -82,7 +82,7 @@ export default function BlogDetails({ params }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Retrieve blogs from localStorage
+   
     const storedBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
     
     // Find the blog with matching slug
